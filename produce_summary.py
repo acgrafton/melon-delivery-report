@@ -1,8 +1,6 @@
-print("Day 1")
+def generate_produce_summary(one_file):
 
-def generate_produce_summary(the_file):
-
-    for line in the_file:
+    for line in one_file:
         line = line.rstrip()
         words = line.split('|')
 
@@ -12,38 +10,17 @@ def generate_produce_summary(the_file):
 
         print("Delivered {} {}s for total of ${}".format(
             count, melon, amount))
-    the_file.close()
-
-
-generate_produce_summary(open("um-deliveries-20140519.txt"))
+    one_file.close()
 
 
 
-# print("Day 2")
-# the_file = open("um-deliveries-20140520.txt")
-# for line in the_file:
-#     line = line.rstrip()
-#     words = line.split('|')
-
-#     melon = words[0]
-#     count = words[0]
-#     amount = words[0]
-
-#     print("Delivered {} {}s for total of ${}".format(
-#         count, melon, amount))
-# the_file.close()
+def run_multiple_reports(list_of_files):
+    for i, one_file in enumerate(list_of_files):
+        print("Day", i+1)
+        generate_produce_summary(one_file)
 
 
-# print("Day 3")
-# the_file = open("um-deliveries-20140521.txt")
-# for line in the_file:
-#     line = line.rstrip()
-#     words = line.split('|')
+the_files = [open("um-deliveries-20140519.txt"),open("um-deliveries-20140520.txt"),open("um-deliveries-20140521.txt")]
 
-#     melon = words[0]
-#     count = words[0]
-#     amount = words[0]
+run_multiple_reports(the_files)
 
-#     print("Delivered {} {}s for total of ${}".format(
-#         count, melon, amount))
-# the_file.close()
