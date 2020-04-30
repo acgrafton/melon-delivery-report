@@ -1,4 +1,7 @@
 def generate_produce_summary(one_file):
+    """Prints produce summary for one day'
+
+    Loop through text file and print out number of melons delivered and revenue.""" 
 
     for line in one_file:
         line = line.rstrip()
@@ -15,6 +18,10 @@ def generate_produce_summary(one_file):
 
 
 def run_multiple_reports(list_of_files):
+    """Prints produce summary for multiple days
+
+    Loops through list of text files and prints produce summary for each day."""
+
     for i, one_file in enumerate(list_of_files):
         print("Day", i+1)
         generate_produce_summary(one_file)
